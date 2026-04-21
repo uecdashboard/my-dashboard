@@ -1036,7 +1036,11 @@
             `).join('');
         }
 
-        // ── Add Comment ──
+        // ── GOOGLE APP SCRIPT URL ──
+        // Once you create your Google Apps Script, paste the Web App URL here:
+        const GOOGLE_SCRIPT_URL = ''; 
+
+        // ── Add Comment & Send to Google Sheets ──
         function addComment(imageId) {
             const input = document.getElementById('input-' + imageId);
             const text = input.value.trim();
@@ -1053,6 +1057,30 @@
             saveComments(imageId, comments);
             renderComments(imageId);
             input.value = '';
+
+            // ── Background Data Submission (Google Sheets) ──
+            if (GOOGLE_SCRIPT_URL) {
+                // Device detection
+                const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+                const deviceType = isMobile ? 'Mobile' : 'Laptop/Desktop';
+                const isApproved = getApproval(imageId) ? "Yes" : "No";
+                
+                const formData = new FormData();
+                formData.append('Image', 'Image 0' + imageId);
+                formData.append('Device', deviceType);
+                formData.append('Date', time);
+                formData.append('Approved', isApproved);
+                formData.append('Comment', text);
+
+                fetch(GOOGLE_SCRIPT_URL, { 
+                    method: 'POST', 
+                    body: formData,
+                    mode: 'no-cors' // Allows submitting without reading response
+                }).then(() => console.log('Successfully sent to Google Sheet'))
+                  .catch(e => console.error('Error sending to sheet:', e));
+            } else {
+                console.log("No Google Script URL provided, skipped saving to sheets.");
+            }
         }
 
         // ── Delete Comment ──
