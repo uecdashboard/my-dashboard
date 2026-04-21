@@ -1,0 +1,21 @@
+{
+    "title": "📊 My Dashboard",
+    "subtitle": "Images & comments powered by GitHub",
+    "items": [
+        {
+            "image": "images/sample1.png",
+            "title": "Project Overview",
+            "comment": "This is the main project overview showing key metrics and performance indicators for Q2 2026."
+        },
+        {
+            "image": "images/sample2.png",
+            "title": "Analytics Report",
+            "comment": "Monthly analytics showing user engagement trends, page views, and conversion rates across all channels."
+        },
+        {
+            "image": "images/sample3.png",
+            "title": "Team Progress",
+            "comment": "Current sprint progress with task completion rates, blockers, and team velocity over the last 3 weeks."
+        }
+    ]
+}
