@@ -286,8 +286,8 @@
             color: #fff; font-weight: 700; margin-bottom: 1.5rem;
             font-size: 1.2rem;
         }
-        .bar-chart { display: flex; align-items: flex-end; gap: 1rem; height: 200px; padding-top: 1rem; }
-        .bar-group { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+        .bar-chart { display: flex; align-items: flex-end; gap: 1rem; height: 250px; padding-top: 1rem; }
+        .bar-group { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 0.5rem; height: 100%; }
         .bar {
             width: 100%;
             border-radius: 8px 8px 0 0;
@@ -1189,25 +1189,33 @@
                         <div class="bar" style="height:45%; background: linear-gradient(to top, #1877F2, #42a5f5);">
                             <div class="bar-value">12.8K</div>
                         </div>
-                        <div class="bar-label">Facebook</div>
+                        <div class="bar-label">
+                            <span style="background:#1877F2; padding:0.2rem 0.4rem; border-radius:5px; color:#fff; font-weight:bold; font-size:0.75rem; margin-right:0.3rem;">f</span>Facebook
+                        </div>
                     </div>
                     <div class="bar-group">
                         <div class="bar" style="height:60%; background: linear-gradient(to top, #E1306C, #F77737);">
                             <div class="bar-value">28.5K</div>
                         </div>
-                        <div class="bar-label">Instagram</div>
+                        <div class="bar-label">
+                            <span style="background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); padding:0.2rem 0.4rem; border-radius:5px; color:#fff; font-size:0.75rem; margin-right:0.3rem;">📷</span>Instagram
+                        </div>
                     </div>
                     <div class="bar-group">
                         <div class="bar" style="height:92%; background: linear-gradient(to top, #25F4EE, #FE2C55);">
                             <div class="bar-value">52.1K</div>
                         </div>
-                        <div class="bar-label">TikTok</div>
+                        <div class="bar-label">
+                            <span style="background:#000; border:1px solid #25F4EE; padding:0.2rem 0.4rem; border-radius:5px; color:#fff; font-size:0.75rem; margin-right:0.3rem;">🎵</span>TikTok
+                        </div>
                     </div>
                     <div class="bar-group">
                         <div class="bar" style="height:30%; background: linear-gradient(to top, #0A66C2, #0077B5);">
                             <div class="bar-value">6.4K</div>
                         </div>
-                        <div class="bar-label">LinkedIn</div>
+                        <div class="bar-label">
+                            <span style="background:#0A66C2; padding:0.2rem 0.4rem; border-radius:5px; color:#fff; font-weight:bold; font-size:0.75rem; margin-right:0.3rem;">in</span>LinkedIn
+                        </div>
                     </div>
                 </div>
             </div>
